@@ -43,6 +43,11 @@ jobs:
         echo "C:\Program Files\LLVM\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
     - name: dump clang-tidy
       run: cd Task1 && clang-tidy --dump-config >> .clang-tidy
+
+    - name: Install Doxygen with Chocolatey
+      run: |
+        choco install doxygen.install -y
+        choco install graphviz -y
     
     - name: Configure Conan
       run: |
