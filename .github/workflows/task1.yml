@@ -49,7 +49,7 @@ jobs:
 
       - name: Configure CMake
         run: | 
-          cd Task1 && cmake -B build \
+          cd Task1 && cmake -B build -G Ninja \
           -DCMAKE_TOOLCHAIN_FILE=Task1/build/conan_toolchain.cmake
 
       - name: Build
