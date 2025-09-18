@@ -23,10 +23,10 @@ jobs:
     strategy:
       matrix:
          os: [ubuntu-latest]
-         generator: [Visual Studio 17 2022]
+         generator: [Ninja]
          exclude:
           - os: ubuntu-latest
-            generator: Visual Studio 17 2022
+            generator: Ninja
       
 
     # Steps represent a sequence of tasks that will be executed as part of the job
