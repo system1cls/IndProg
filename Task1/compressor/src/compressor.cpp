@@ -21,7 +21,6 @@ libcompressor_CompressionAlgorithm parse_algo(char* input_str_in_char);
 libcompressor_Buffer init_input_buffer(char* input_data);
 void print(libcompressor_Buffer buffer);
 
-
 /**
  * @brief main function
  */
@@ -70,7 +69,7 @@ int main(int argc, char** argv) {
 
 /**
  * @brief function to check the cnt of arguments
- * 
+ *
  * @param argc cnt of arguments
  * @return result of checking
  */
@@ -78,7 +77,7 @@ bool check_args_count(int argc) { return argc < 3; }
 
 /**
  * @brief function parse first algo into libcompressing algorithm
- * 
+ *
  * @param input_str_in_char argument to parse
  * @return compression algorithm from enum
  */
@@ -99,10 +98,9 @@ libcompressor_CompressionAlgorithm parse_algo(char* input_str_in_char) {
   exit(EXIT_FAILURE);
 }
 
-
 /**
  * @brief make from char string with lower case letters
- * 
+ *
  * @param str char array to transform
  * @return transformed string
  */
@@ -114,7 +112,7 @@ string make_lower_cases_string_from_char_array(char* str) {
 
 /**
  * @brief function to initialaise input buffer
- * 
+ *
  * @param input_data input data to compress
  * @return initialised buffer
  */
@@ -124,7 +122,6 @@ libcompressor_Buffer init_input_buffer(char* input_data) {
   buffer.size = strlen(input_data) + 1;
   return buffer;
 }
-
 
 /**
  * @brief print data in format %0.2hhx

@@ -1,7 +1,7 @@
 /**
  * @file libcompressor.hpp
  * @brief file with declaration of compression function, structure and enum
-*/
+ */
 
 /**
  * @brief enum with algo
@@ -19,10 +19,9 @@ struct libcompressor_Buffer {
   int size;
 };
 
-
 /**
  * @brief compress data basing on algo
- * 
+ *
  * @param algo algorithm of compressing
  * @param input structure with input data that must be compressed
  * @return structure with compressed data and its size
