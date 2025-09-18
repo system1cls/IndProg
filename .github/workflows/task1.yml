@@ -44,7 +44,12 @@ jobs:
         run: |
          sudo apt-get update
          sudo apt-get install -y doxygen graphviz
-      
+
+      - name: Install clang-tidy and dependencies
+        run: |
+         sudo apt-get update
+         sudo apt-get install -y clang-tidy clang clang-tools cmake ninja-build
+       
       # Runs a set of commands using the runners shell
       - name: Configure Conan profiles
         run: |
