@@ -37,7 +37,7 @@ jobs:
           conan profile detect --force
 
       - name: go to task
-        run: ls && cd Task1
+        run: cd Task1 && ls
       
       - name: Install dependencies with Conan
         run : |
