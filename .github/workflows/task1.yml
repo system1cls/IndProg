@@ -35,23 +35,20 @@ jobs:
       - name: Configure Conan profiles
         run: |
           conan profile detect --force
-
-      - name: go to task
-        run: cd Task1 && ls
       
       - name: Install dependencies with Conan
         run : |
-          conan install . --output-folder=build --build=missing \
+          conan install Task1 --output-folder=Task1/build --build=missing \
           -s compiler.cppstd=20
 
       - name: Configure CMake
         run: | 
-          cmake -B build \
-          -DCMAKE_TOOLCHAIN_FILE=build/conan_toolchain.cmake
+          cmake -B Task1/build \
+          -DCMAKE_TOOLCHAIN_FILE=Task1/build/conan_toolchain.cmake
 
       - name: Build
-        run: cmake --build build
+        run: cmake --build Task1/build
 
       - name: Test
         run: |
-          cd build && ctest -V -j4
+          cd Task1/build && ctest -V -j4
