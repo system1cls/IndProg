@@ -62,7 +62,7 @@ jobs:
 
       - name: Install dependencies with Conan
         run : |
-          conan install Task1 --output-folder=Task1/build --build=missing \
+          conan install Task1 --output-folder=Task1/ --build=missing \
           -s compiler.cppstd=20
 
       - name: Configure CMake
