@@ -37,8 +37,8 @@ jobs:
           conan profile detect --force
       
       - name: Install latest CMake
-      	uses: lukka/get-cmake@latest
-      	with:
+        uses: lukka/get-cmake@latest
+        with:
           cmakeVersion: 4.0.0
 
 
