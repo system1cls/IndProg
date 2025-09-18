@@ -58,7 +58,7 @@ jobs:
 
       - name: Configure CMake
         run: | 
-          cd Task1 && cmake -B build -G Ninja \
+          cd Task1 && cmake -B build -G "Visual Studio 17 2022" \
           -DCMAKE_TOOLCHAIN_FILE=Task1/build/conan_toolchain.cmake
 
       - name: Build
