@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  Linux:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -43,7 +43,7 @@ jobs:
 
       - name: Configure CMake
         run: | 
-          cmake -B Task1/build \
+          cd Task1 && cmake -B build \
           -DCMAKE_TOOLCHAIN_FILE=Task1/build/conan_toolchain.cmake
 
       - name: Build
