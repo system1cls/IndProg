@@ -74,6 +74,10 @@ jobs:
         run: | 
           cd Task1 && cmake --preset conan-release
 
+      - name: dump tidy
+        run: |
+         cd Task1 && clang-tidy --dump-config
+      
       - name: Build
         run: cmake --build Task1/build/Release
 
