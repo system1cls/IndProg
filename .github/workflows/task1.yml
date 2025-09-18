@@ -33,8 +33,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install conan
 
-   
+    
+    - name: Install LLVM/Clang with Chocolatey
+      run: |
+        choco install llvm -y
 
+    - name: Add LLVM to PATH
+      run: |
+        echo "C:\Program Files\LLVM\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
+    - name: dump clang-tidy
+      run: cd Task1 && clang-tidy --dump-config >> .clang-tidy
+    
     - name: Configure Conan
       run: |
         conan profile detect --force
@@ -45,7 +54,7 @@ jobs:
     - name: Conan install packages
       run: |
        cd Task1/build && conan install .. --build=missing -s compiler.cppstd=20 -c tools.cmake.cmaketoolchain:generator=Ninja
-
+ 
     - name: Configure and build with VS environment
       shell: cmd
       run: |
