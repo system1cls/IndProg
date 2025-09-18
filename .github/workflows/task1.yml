@@ -62,7 +62,7 @@ jobs:
 
       - name: Configure CMake
         run: | 
-          cd Task1 && cmake -B build -G "Unix Makefiles" \
+          cd Task1 && cmake -B build -G "Unix Makefiles" -DCMAKE_TOOLCAHIN_FILE=Release/generators/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release \
           -DCMAKE_TOOLCHAIN_FILE=Task1/build/conan_toolchain.cmake
 
       - name: Build
