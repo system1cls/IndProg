@@ -23,7 +23,10 @@ jobs:
 
     - name: Checkout code
       uses: actions/checkout@v4
-
+      
+    - name: Install latest CMake with Chocolatey
+      run: |
+        choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' -y
 
     - name: Install Conan
       run: |
