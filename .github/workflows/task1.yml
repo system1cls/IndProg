@@ -40,7 +40,7 @@ jobs:
 
     - name: Conan install packages
       run: |
-       cd Task1/build && conan install .. -s compiler.cppstd=20 -c tools.cmake.cmaketoolchain:generator=Ninja
+       cd Task1/build && conan install .. --build=missing -s compiler.cppstd=20 -c tools.cmake.cmaketoolchain:generator=Ninja
 
     - name: cmake conf
       run: cd Task1 && cmake --preset conan-release
