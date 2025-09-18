@@ -76,7 +76,7 @@ jobs:
 
       - name: dump tidy
         run: |
-         cd Task1 && clang-tidy --dump-config
+         cd Task1 && clang-tidy --dump-config >>.clang-tidy
       
       - name: Build
         run: cmake --build Task1/build/Release
